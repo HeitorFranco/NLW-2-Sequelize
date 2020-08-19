@@ -10,6 +10,7 @@ nunjucks.configure("src/views", {
     noCache: true,
 
 })
+const PORT = process.env.PORT || 5000
 
 
 server
@@ -22,4 +23,4 @@ server
 .get("/sucess", (req, res) => {
     return res.render("sucess.html")
 })
-.listen(5000)
+.listen(PORT)
