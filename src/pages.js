@@ -101,21 +101,19 @@ async function saveClasses(req, res){
                     }
                 )
             })
+            var queryString = "?subject=" + req.body.subject
+            queryString += "&weekday=" + req.body.weekday[0]
+            queryString += "&time=" + req.body.time_from[0]
+            
+            //setTimeout( ()=>{
+            //    return res.redirect("/sucess")
+            //},2000)
+
+            return res.redirect("/study" + queryString)
         }, 1000)
     }
-
     try {
         create()
-        
-        var queryString = "?subject=" + req.body.subject
-        queryString += "&weekday=" + req.body.weekday[0]
-        queryString += "&time=" + req.body.time_from[0]
-        
-        //setTimeout( ()=>{
-        //    return res.redirect("/sucess")
-        //},2000)
-
-        return res.redirect("/study" + queryString)
     } catch (error) {
         console.log(error)
     }

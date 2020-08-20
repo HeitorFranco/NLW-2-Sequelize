@@ -2,7 +2,7 @@ document.querySelector("#add-time")
 .addEventListener("click", cloneFielf)
 
 
-function cloneFielf() {
+function cloneFielf(e) {
     const newFieldContainer = document.querySelector(".schedule-item").cloneNode(true)
 
     const fields = newFieldContainer.querySelectorAll('input')
@@ -10,6 +10,7 @@ function cloneFielf() {
     fields.forEach((field) => {
         field.value = ""
     })
+
 
 
     document.querySelector("#schedule-items").appendChild(newFieldContainer)

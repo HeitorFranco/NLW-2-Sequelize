@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
 
   <script src="scripts/addField.js" defer></script>
+  <script src="scripts/deleteField.js" defer></script>
   <script src="scripts/sucess.js" defer></script>
 </head>
 <body id="page-give-classes">
@@ -117,6 +118,10 @@
             <div class="input-block">
               <label for="time_to">Até</label>
               <input type="time" name="time_to[]" required>
+            </div>
+            <div class="delete-container">
+              <img onclick="deleteField(this)" class="img-container" src="images/icons/criss-cross.svg" alt="" title='Delete'>
+              <img onclick="deleteField(this)" class="img-container-2" src="images/icons/quit.svg" alt="" title='Delete'>
             </div>
           </div>
 
