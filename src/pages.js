@@ -5,9 +5,9 @@ const Database = require("./database/db")
 const {subjects, weekdays, getSubject, convertHoursToMinutes} = require("./utils/format")
 const { QueryTypes } = require("sequelize")
 
-function pageLanding(req, res) {
-    
-    return res.render("index.html")
+async function pageLanding(req, res) {
+    const conexoes = (await insetedProffy.findAll()).length
+    return res.render("index.html", {conexoes})
 }
 async function pageStudy(req, res) {
     const filters = req.query
