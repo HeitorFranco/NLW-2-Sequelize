@@ -9,14 +9,15 @@
 
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/partials/header.css">
-  <link rel="stylesheet" href="styles/partials/forms.css">
   <link rel="stylesheet" href="styles/partials/page-give-classes.css">
+  <link rel="stylesheet" href="styles/partials/forms.css">
   
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
 
   <script src="scripts/addField.js" defer></script>
   <script src="scripts/deleteField.js" defer></script>
   <script src="scripts/sucess.js" defer></script>
+
 </head>
 <body id="page-give-classes">
 
@@ -75,11 +76,10 @@
 
         <fieldset>
           <legend>Sobre a aula</legend>
-
           <div class="select-block">
             <label for="subject">Matéria</label>
             <select name="subject" id="subject" required>
-              <option value="">Selecione uma opção</option>
+            <option value="">Selecione uma opção</option>
               {%for subject in subjects %}
                 <option value="{{loop.index}}">{{subject}}</option>
               {%endfor%}  

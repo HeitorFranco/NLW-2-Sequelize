@@ -27,8 +27,7 @@
     resize: vertical;
 }
 
-.input-block,
-textarea-block{
+.input-block, .textarea-block{
     position: relative;
 }
 
