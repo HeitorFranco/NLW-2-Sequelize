@@ -1,6 +1,6 @@
 # NLW-2
 
-Projeto feito durante a NLW 2, muito aprendezado envolvido!
+Projeto feito durante a NLW 2, muito aprendizado envolvido!
 
 Neste projeto utilizei:
 
