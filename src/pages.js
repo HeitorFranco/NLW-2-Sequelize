@@ -22,7 +22,7 @@ async function pageStudy(req, res) {
   const filters = req.query;
 
   if (!filters.subject && !filters.weekday && !filters.time) {
-    const query = `SELECT \`classes\`.*, \`proffys\`.*
+    const query = `SELECT classes.*, proffys.*
       FROM proffys
       JOIN classes ON (classes.proffy_id = proffys.id)`;
 
@@ -60,7 +60,7 @@ async function pageStudy(req, res) {
 
   const timeToMinutes = convertHoursToMinutes(filters.time);
 
-  const query = `SELECT \`classes\`.*, \`proffys\`.*
+  const query = `SELECT classes.*, proffys.*
     FROM proffys
     JOIN classes ON (classes.proffy_id = proffys.id)
     WHERE EXISTS (
@@ -71,7 +71,7 @@ async function pageStudy(req, res) {
         AND class_schedules.time_from <= ${timeToMinutes}
         AND class_schedules.time_to > ${timeToMinutes}
     )
-    AND classes.subject = "${filters.subject}"`;
+    AND classes.subject = ${filters.subject}`;
 
   try {
     const proffys = await db.query(query, { type: QueryTypes.SELECT });
